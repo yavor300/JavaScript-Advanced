@@ -1,3 +1,5 @@
-function edit(ref, occurence, replace) {
-    ref.textContent = ref.textContent.replaceAll(occurence, replace);
+function edit(ref, match, replacer) {
+    const mathcer = new RegExp(match, 'g');
+    const result = ref.textContent.replace(mathcer, replacer);
+    ref.textContent = result;
 }
