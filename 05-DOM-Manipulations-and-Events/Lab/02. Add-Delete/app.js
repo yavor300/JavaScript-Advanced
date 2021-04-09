@@ -3,7 +3,13 @@ function addItem() {
 
     if (input.length !== 0) {
         const li = document.createElement('li');
-        li.innerHTML += input + '<a href="#">[Delete]</a>'
+        li.textContent = input;
+
+        const a = document.createElement('a');
+        a.textContent = '[Delete]';
+        a.href = '#';
+        li.appendChild(a);
+        
         document.getElementById('items').appendChild(li);
     
         Array.from(li.children)[0].addEventListener('click', remove);
